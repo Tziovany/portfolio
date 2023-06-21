@@ -16,6 +16,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="stylesheet" type="text/css" href="../../public/global.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -119,7 +120,7 @@ const { title } = Astro.props;
 	}
 
 	.glassmorphism {
-		background: rgba(0, 0, 0, 0.30);
+		background: rgba(0, 0, 0, 0.3);
 		box-shadow: 0 8px 15px 0 rgba(31, 38, 135, 0.37);
 		backdrop-filter: blur(16.5px);
 		-webkit-backdrop-filter: blur(16.5px);
