@@ -2,7 +2,7 @@
 const { classIcon, techName, color } = Astro.props;
 ---
 
-<div class="z-0" id="animation">
+<div class="z-0 w-32" id="animation">
   <i class={classIcon}></i>
   <h3>
     {techName}
@@ -15,7 +15,6 @@ const { classIcon, techName, color } = Astro.props;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 15rem;
 
     background: rgb(51, 145, 203);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

@@ -7,10 +7,10 @@ import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="md:container md:mx-auto">
+	<main class="w-full flex justify-center items-center">
 		<About />
-		<div class="sections-container">
-			<div id="technologies" class="md:container md:mx-auto">
+		<div class="sections-container w-9/12">
+			<div id="technologies" class="container ">
 				<Section nameSection="Tecnologías" isFlex={true}>
 					<Tech
 						techName={"React"}
@@ -43,7 +43,7 @@ import Projects from "../components/Projects.astro";
 				</Section>
 			</div>
 
-			<div id="projects" class="container mx-auto">
+			<div id="projects" class="container">
 				<Section nameSection="Proyectos">
 					<Projects />
 				</Section>
@@ -63,7 +63,6 @@ import Projects from "../components/Projects.astro";
 		border: currentColor solid;
 		border-color: currentColor;
 		border-radius: 5px;
-		max-width: 1080px;
 
 		padding: 1rem;
 		margin: 1rem;
