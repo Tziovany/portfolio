@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 export interface Props {
 	title: string;
 }
@@ -6,31 +8,122 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,800;1,400&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
+	<body class="font-['Nunito'] flex justify-center items-center flex-col">
+		<div class="container glassmorphism sticky top-0 z-10">
+			<div class="navbar-container">
+				<Navbar />
+			</div>
+		</div>
+		<hr class="hr-navbar" />
 		<slot />
+		<Footer />
 	</body>
+
+	<script is:inline>
+		const theme = (() => {
+			if (
+				typeof localStorage !== "undefined" &&
+				localStorage.getItem("theme")
+			) {
+				return localStorage.getItem("theme");
+			}
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+				return "dark";
+			}
+			return "light";
+		})();
+
+		if (theme === "dark") {
+			document.documentElement.classList.remove("light");
+		} else {
+			document.documentElement.classList.add("light");
+		}
+
+		window.localStorage.setItem("theme", theme);
+	</script>
+
+	<script
+		src="https://kit.fontawesome.com/303992c342.js"
+		crossorigin="anonymous"></script>
 </html>
 <style is:global>
+	* {
+		padding: 0;
+		margin: 0;
+	}
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		font-family: "Nunito", sans-serif;
+		background-color: #000;
+		color: #1c93dc;
+		scroll-behavior: smooth;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	.container {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 1rem 0 1rem;
+	}
+
+	.navbar-container {
+		width: 100%;
+	}
+
+	.hr-navbar {
+		background-color: currentColor;
+		height: 0.2rem;
+		border: none;
+	}
+	.light-button {
+		width: 1rem;
+	}
+
+	/* light-mode */
+
+	.light {
+		background-color: #1c93dc;
+		color: #000;
+	}
+
+	.dark {
+		color: #1c93dc;
+		background-color: #000;
+	}
+
+	.glassmorphism {
+		background: rgba(0, 0, 0, 0.30);
+		box-shadow: 0 8px 15px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(16.5px);
+		-webkit-backdrop-filter: blur(16.5px);
+		border-radius: 0px 0px 10px 10px;
+		border: 1px solid rgba(255, 255, 255, 0.18);
 	}
 </style>

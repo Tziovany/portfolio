@@ -1,0 +1,34 @@
+---
+import Tech from "./Tech.astro";
+export interface Props {
+  projectName: string;
+  img: string;
+  link: string;
+  description: string;
+  techsClass: string[];
+}
+
+const { projectName, img, link, description, techsClass } = Astro.props;
+---
+
+<div class=" w-96 m-2 p-2 border-b-2 ">
+  <img src={img} class="rounded" alt="" />
+  <div class="flex justify-between">
+    <h1 class="text-lg underline underline-offset-4">
+      {projectName}
+    </h1>
+    <a href={link} target="_blank" class="hover:text-lg"
+      ><i class="fa-solid fa-arrow-up-right-from-square"></i></a
+    >
+  </div>
+  <p>{description}</p>
+  <div class="flex">
+    {
+      techsClass.map((data) => (
+        <div class="w-6 flex items-center justify-center">
+          <i class={`${data} text-2xl hover:text-white`}/>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,29 @@
+---
+import avatarSvg from "/avatar.svg";
+---
+
+<div class="container mx-auto mt-1 p-2 flex justify-around items-center">
+  <div class="p-4 flex flex-col w-72">
+    <span class="text-5xl font-extrabold animate-typingBlink"
+      >Giovanny Rosas</span
+    >
+    
+    <p class="text-lg font-semibold pl-1">Web Developer</p>
+  </div>
+  <img src={avatarSvg} alt="Giovanny" class="h-52" />
+</div>
+
+<style>
+  span {
+    display: block;
+    white-space: nowrap;
+    width: 13ch;
+    border-right: 4px solid;
+
+    overflow: hidden;
+  }
+
+  img {
+    fill: currentColor;
+  }
+</style>

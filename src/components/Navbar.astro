@@ -1,0 +1,72 @@
+---
+import ThemeToggle from "./ThemeToggle";
+---
+
+<div class="nav-container">
+  <h1 class="text-2xl">Giovanny</h1>
+  <nav>
+    <ul>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#technologies">Tecnologías</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <!-- Redes -->
+    <ul>
+      <li>
+        <a href="https://github.com/Tziovany" target="_blank"
+          ><i class="fa-brands fa-github"></i></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/giovanny-rosas-muete-0192531a5/"
+          target="_blank"><i class="fa-brands fa-linkedin"></i></a
+        >
+      </li>
+    </ul>
+    <ul>
+      <li><ThemeToggle client:load /></li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  li {
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    font-weight: 800;
+    /*
+    color: #7ec3eb;
+    */
+  }
+
+  i {
+    font-size: 2rem;
+  }
+
+  .light-mode-container {
+    width: 1rem;
+  }
+</style>
