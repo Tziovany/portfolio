@@ -34,29 +34,6 @@ const { title } = Astro.props;
 		<Footer />
 	</body>
 
-	<script is:inline>
-		const theme = (() => {
-			if (
-				typeof localStorage !== "undefined" &&
-				localStorage.getItem("theme")
-			) {
-				return localStorage.getItem("theme");
-			}
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-				return "dark";
-			}
-			return "light";
-		})();
-
-		if (theme === "dark") {
-			document.documentElement.classList.remove("light");
-		} else {
-			document.documentElement.classList.add("light");
-		}
-
-		window.localStorage.setItem("theme", theme);
-	</script>
-
 	<script
 		src="https://kit.fontawesome.com/303992c342.js"
 		crossorigin="anonymous"></script>
