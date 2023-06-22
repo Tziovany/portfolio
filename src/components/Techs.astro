@@ -1,0 +1,31 @@
+---
+import Section from "./Section.astro";
+import Tech from "./Tech.astro";
+---
+
+<Section nameSection="Tecnologías" isFlex={true}>
+  <Tech
+    techName={"React"}
+    classIcon={"fa-brands fa-react"}
+    class="content"
+    color={"#fff"}
+  />
+
+  <Tech techName={"Java"} color={"#E97B18"} classIcon={"fa-brands fa-java"} />
+
+  <Tech
+    techName={"Angular"}
+    color={"#BD002E"}
+    classIcon={"fa-brands fa-angular"}
+  />
+  <Tech
+    techName={"Node Js"}
+    classIcon={"fa-brands fa-node"}
+    color={"#68A063"}
+  />
+  <Tech
+    techName={"JavaScript"}
+    classIcon={"fa-brands fa-js"}
+    color={"#EAD41C"}
+  />
+</Section>
