@@ -1,21 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     fontFamily: {
       nunito: ["Nunito"],
-    },
-    colors: {
-      current: "currentColor",
-      white: "#fff",
-      blue: "#1c93dc",
-      black: "#000",
     },
     extend: {
       animation: {
         typingBlink:
           "typing 2s steps(12), blink 0.5s infinite step-end alternate",
-        smoothBg: "smoothBg 0.7s linear"
+        smoothBg: "smoothBg 0.7s linear",
       },
       keyframes: {
         typing: {
@@ -26,12 +21,12 @@ module.exports = {
         },
         smoothBg: {
           "0%": {
-            backgroundColor: "#fff"
+            backgroundColor: "#fff",
           },
           "100%": {
-            backgroundColor: "current"
-          }
-        }
+            backgroundColor: "current",
+          },
+        },
       },
     },
   },
