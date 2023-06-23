@@ -1,4 +1,5 @@
 ---
+import linkSvg from "../assets/link.svg";
 export interface Props {
   projectName: string;
   img: string;
@@ -10,14 +11,20 @@ export interface Props {
 const { projectName, img, link, description, techsClass } = Astro.props;
 ---
 
-<div class=" w-96 m-2 p-2 border-b-2 ">
-  <img src={img} class="rounded" alt="" />
-  <div class="flex justify-between">
+<div class="w-96 m-2 p-2 border-b-2 border-current">
+  <img
+    src={img}
+    class="rounded"
+    width="384px"
+    height="230px"
+    alt={projectName}
+  />
+  <div class="flex justify-between items-center">
     <h1 class="text-lg underline underline-offset-4">
       {projectName}
     </h1>
-    <a href={link} target="_blank" class="hover:text-lg"
-      ><i class="fa-solid fa-arrow-up-right-from-square"></i></a
+    <a href={link} target="_blank" class="hover:text-lg dark:bg-white"
+      ><img src={linkSvg} alt="link externo" width="20px" height="20px" /></a
     >
   </div>
   <p>{description}</p>
@@ -25,7 +32,7 @@ const { projectName, img, link, description, techsClass } = Astro.props;
     {
       techsClass.map((data) => (
         <div class="w-6 flex items-center justify-center">
-          <i class={`${data} text-2xl hover:text-white`}/>
+          <i class={`${data} text-2xl hover:text-white`} />
         </div>
       ))
     }
