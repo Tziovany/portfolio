@@ -19,11 +19,14 @@ const { projectName, img, link, description, techsClass } = Astro.props;
     height="230px"
     alt={projectName}
   />
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center p-1">
     <h1 class="text-lg underline underline-offset-4">
       {projectName}
     </h1>
-    <a href={link} target="_blank" class="hover:text-lg dark:bg-white"
+    <a
+      href={link}
+      target="_blank"
+      class="p-1 hover:bg-white rounded hover:text-lg dark:bg-[#1c93dc] dark:hover:bg-white"
       ><img src={linkSvg} alt="link externo" width="20px" height="20px" /></a
     >
   </div>
