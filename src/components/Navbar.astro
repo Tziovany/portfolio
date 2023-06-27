@@ -1,33 +1,34 @@
 ---
 import ThemeToggle from "./ThemeToggle";
+import closeSvg from "../assets/close.svg";
 ---
 
-<div class="nav-container">
+<div class="nav-container p-2">
   <h1 class="sm:text-2xl text-xl font-extrabold">Giovanny</h1>
   <nav>
     <ul class="hidden sm:flex">
-      <li><a href="#projects" class="text-current">Proyectos</a></li>
-      <li><a href="#technologies">Tecnologías</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li class="p-1 underline underline-offset-4">
+        <a href="#projects" class="text-current">Proyectos</a>
+      </li>
+      <li class="p-1 underline underline-offset-4">
+        <a href="#technologies">Tecnologías</a>
+      </li>
+      <li class="p-1 underline underline-offset-4">
+        <a href="#contact">Contacto</a>
+      </li>
     </ul>
     <!-- Redes -->
-    <ul>
-      <li>
-        <a href="https://github.com/Tziovany" target="_blank"
-          ><i class="fa-brands fa-github"></i></a
-        >
-      </li>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/giovanny-rosas-muete-0192531a5/"
-          target="_blank"><i class="fa-brands fa-linkedin"></i></a
-        >
-      </li>
-    </ul>
-    <ul>
-      <li><ThemeToggle client:load /></li>
-    </ul>
+
+    <!-- 
+      menu mobile
+     -->
+    <!-- <a href="#menu" class="nav-menu sm:hidden">
+      <img src={closeSvg} alt="cerrar" />
+    </a> -->
+
+    <!--  -->
   </nav>
+  <ThemeToggle client:load />
 </div>
 
 <style>
@@ -47,9 +48,6 @@ import ThemeToggle from "./ThemeToggle";
     display: flex;
     list-style: none;
   }
-  li {
-    padding: 1rem;
-  }
 
   a {
     text-decoration: none;
@@ -60,10 +58,6 @@ import ThemeToggle from "./ThemeToggle";
     /*
     color: #7ec3eb;
     */
-  }
-
-  i {
-    font-size: 2rem;
   }
 
   .light-mode-container {
