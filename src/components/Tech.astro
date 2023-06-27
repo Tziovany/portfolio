@@ -2,11 +2,11 @@
 const { classIcon, techName, color } = Astro.props;
 ---
 
-<div class="z-0 w-32" id="animation">
-  <i class={classIcon}></i>
-  <h3>
+<div class="z-0 w-32 p-1 flex flex-row sm:flex-col" id="animation">
+  <i class={`${classIcon} text-xl p-1 sm:text-4xl`}></i>
+  <span class="text-lg p-1">
     {techName}
-  </h3>
+  </span>
 </div>
 
 <style define:vars={{ color }}>
